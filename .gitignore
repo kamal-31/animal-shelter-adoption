@@ -1,0 +1,36 @@
+# Root .gitignore for animal-shelter-adoption
+
+# Gradle/Java
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ/IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node / frontend (if present)
+node_modules/
+dist/
+
+# Misc
+*.swp
+*.lock
+
+docs-private/
+*.personal.md
+
+# keep backend-specific ignores in backend/.gitignore
+# ...existing code...

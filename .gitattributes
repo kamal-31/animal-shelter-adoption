@@ -1,0 +1,27 @@
+# Enforce consistent line endings and text handling
+* text=auto
+
+# Shell scripts should use LF
+*.sh text eol=lf
+
+# Gradle/Kotlin/Java sources should use LF
+*.gradle text eol=lf
+*.kts text eol=lf
+*.kt text eol=lf
+*.java text eol=lf
+
+# Windows batch files keep CRLF
+*.bat text eol=crlf
+
+# Binary files
+*.jar binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+
+# Keep generated build artifacts out
+**/build/ -text
+
+# End of file

@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  
+  jpa:
+    show-sql: false
+  
+  flyway:
+    clean-disabled: true
+
+aws:
+  s3:
+    endpoint: ""
+    region: us-east-1
+    bucket-name: ${S3_BUCKET_NAME}
+    access-key: ${AWS_ACCESS_KEY_ID}
+    secret-key: ${AWS_SECRET_ACCESS_KEY}
+
+logging:
+  level:
+    root: WARN
+    com.animalshelter: INFO
+    org.springframework.web: WARN
+    org.hibernate.SQL: WARN

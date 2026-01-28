@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+    locations: classpath:db/migration
+    clean-disabled: false
+
+aws:
+  s3:
+    endpoint: http://localhost:4566
+    region: us-east-1
+    bucket-name: test-bucket
+    access-key: test
+    secret-key: test
+
+logging:
+  level:
+    root: WARN
+    com.animalshelter: DEBUG
+    org.springframework.web: INFO

@@ -1,0 +1,15 @@
+{
+  "applicant": {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phone": "555-123-4567"
+  },
+  "application": {
+    "reason": "I have always loved cats and have a spacious apartment perfect for Luna. I work from home so I can give her plenty of attention and care.",
+    "status": "PENDING"
+  },
+  "pet": {
+    "name": "Luna",
+    "status": "PENDING"
+  }
+}

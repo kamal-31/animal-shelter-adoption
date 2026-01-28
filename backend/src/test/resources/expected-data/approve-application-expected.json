@@ -1,0 +1,13 @@
+{
+  "application": {
+    "status": "APPROVED",
+    "reviewedBy": "Admin User"
+  },
+  "adoptionHistory": {
+    "status": "PENDING_PICKUP"
+  },
+  "pet": {
+    "name": "Charlie",
+    "status": "PENDING"
+  }
+}

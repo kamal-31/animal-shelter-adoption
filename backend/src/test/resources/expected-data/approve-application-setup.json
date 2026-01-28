@@ -1,0 +1,22 @@
+{
+  "pet": {
+    "name": "Charlie",
+    "speciesId": 1,
+    "age": 4,
+    "imageUrl": "https://example.com/charlie.jpg",
+    "description": "A loyal and gentle dog",
+    "status": "PENDING"
+  },
+  "applicant": {
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "phone": "555-987-6543"
+  },
+  "application": {
+    "reason": "I have a large backyard and two kids who would love a dog. We have experience with pets and can provide a loving home.",
+    "status": "PENDING"
+  },
+  "request": {
+    "reviewedBy": "Admin User"
+  }
+}

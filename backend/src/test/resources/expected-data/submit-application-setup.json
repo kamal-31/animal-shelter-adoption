@@ -1,0 +1,16 @@
+{
+  "pet": {
+    "name": "Luna",
+    "speciesId": 2,
+    "age": 1,
+    "imageUrl": "https://example.com/luna.jpg",
+    "description": "A beautiful calico cat",
+    "status": "AVAILABLE"
+  },
+  "request": {
+    "applicantName": "John Doe",
+    "email": "john.doe@example.com",
+    "phone": "555-123-4567",
+    "reason": "I have always loved cats and have a spacious apartment perfect for Luna. I work from home so I can give her plenty of attention and care."
+  }
+}

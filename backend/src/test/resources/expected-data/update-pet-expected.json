@@ -1,0 +1,10 @@
+{
+  "pet": {
+    "name": "Max Jr",
+    "speciesId": 1,
+    "age": 3,
+    "imageUrl": "https://example.com/max-updated.jpg",
+    "description": "A playful young dog who has grown up",
+    "status": "AVAILABLE"
+  }
+}

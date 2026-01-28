@@ -1,0 +1,10 @@
+{
+  "comment": "Species are seeded via Flyway V7 migration. Species ID 1 = Dog",
+  "request": {
+    "name": "Buddy",
+    "speciesId": 1,
+    "age": 3,
+    "imageUrl": "https://example.com/buddy.jpg",
+    "description": "A friendly golden retriever who loves to play fetch"
+  }
+}

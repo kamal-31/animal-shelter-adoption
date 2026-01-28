@@ -474,6 +474,16 @@ open build/reports/tests/test/index.html
 ./gradlew jacocoTestCoverageVerification
 ```
 
+**Run Integration Tests:**
+
+```bash
+# Run integration tests only (requires Docker for Testcontainers)
+./gradlew test --tests "com.animalshelter.integration.*"
+
+# Integration tests use Testcontainers to spin up PostgreSQL
+# No need to have docker-compose running - Testcontainers manages containers
+```
+
 **Frontend:**
 
 ```bash

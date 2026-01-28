@@ -206,6 +206,8 @@ This project uses modern, industry-standard technologies to demonstrate best pra
 | **JUnit 5** | Test framework |
 | **Mockito + mockito-kotlin** | Mocking dependencies |
 | **Spring Test** | Spring context testing |
+| **Testcontainers** | Integration testing with real PostgreSQL |
+| **JSONAssert** | Flexible JSON comparison |
 | **JaCoCo** | Code coverage reporting |
 
 **Why Mockito?**
@@ -214,6 +216,13 @@ This project uses modern, industry-standard technologies to demonstrate best pra
 - ✅ Clean API with mockito-kotlin extensions
 - ✅ Excellent documentation and community support
 - ✅ Built-in with spring-boot-starter-test
+
+**Why Testcontainers?**
+
+- ✅ Real database testing (PostgreSQL in Docker)
+- ✅ Tests run against actual Flyway migrations
+- ✅ Validates queries and transactions work correctly
+- ✅ Seamless Spring Boot integration with @ServiceConnection
 
 **Why JaCoCo?**
 
@@ -224,8 +233,8 @@ This project uses modern, industry-standard technologies to demonstrate best pra
 
 **Test Coverage:**
 
-- Service layer: 95%+ instruction coverage
-- 76 unit tests across all services
+- Unit tests across services
+- Integration tests (REST API + DB verification)
 - Mocked repository layer for isolated unit testing
 
 ---

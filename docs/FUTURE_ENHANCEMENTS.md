@@ -286,53 +286,62 @@ CREATE TABLE medical_records
 
 ## Testing
 
-### Backend Testing
+### Backend Testing (Implemented)
+
+**Unit Tests:**
+- 76 unit tests covering all service layer methods
+- Mockito for mocking repositories
+- 95%+ code coverage on service layer
+
+**Integration Tests:**
+- 4 integration tests with Testcontainers (PostgreSQL)
+- Tests REST API endpoints with real database
+- JSON file-based expected data for maintainability
+- Independent tests with DB cleanup before each test
 
 ```kotlin
-@SpringBootTest
-class ApplicationServiceTest {
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Testcontainers
+class PetAndApplicationIntegrationTest : BaseIntegrationTest() {
     @Test
-    fun `should prevent double approval`() {
-        // Given
-        val app1 = createApplication(petId = 1)
-        service.approve(app1.id)
-
-        val app2 = createApplication(petId = 1)
-        // When/Then
-        assertThrows<BusinessRuleViolationException> {
-            service.approve(app2.id)
-        }
+    fun `POST api-admin-pets should create pet and persist to database`() {
+        // Load setup/expected data from JSON files
+        // Execute REST call via TestRestTemplate
+        // Verify DB state using JSONAssert
     }
 }
 ```
 
-**Coverage:**
+### Future Test Expansion
 
-- Unit tests (JUnit 5 + MockK)
-- Integration tests (TestContainers)
-- E2E tests (RestAssured)
-- Target: 80% code coverage
+**Additional Integration Tests:**
 
-### Frontend Testing
+- Error scenarios (duplicate application, approving already approved)
+- Full adoption lifecycle (submit → approve → confirm → return)
+- Concurrent access scenarios
+- Edge cases for business rules
+
+**Frontend Testing:**
 
 ```typescript
 describe('ApplicationForm', () => {
   it('should validate reason length', () => {
     render(<ApplicationForm petId={1} petName="Buddy" />)
-    
+
     const reason = screen.getByLabelText(/reason/i)
     fireEvent.change(reason, { target: { value: 'Short' } })
-    
+
     expect(screen.getByText(/at least 50 characters/i)).toBeInTheDocument()
   })
 })
 ```
 
-**Coverage:**
+**Target Coverage:**
 
 - Component tests (React Testing Library)
 - Hook tests (@testing-library/react-hooks)
 - E2E tests (Playwright or Cypress)
+- Backend: 80%+ overall coverage
 
 ---
 

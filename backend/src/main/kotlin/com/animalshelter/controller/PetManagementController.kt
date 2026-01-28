@@ -7,6 +7,7 @@ import com.animalshelter.dto.UpdatePetRequest
 import com.animalshelter.service.ImageService
 import com.animalshelter.service.PetService
 import jakarta.validation.Valid
+import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
@@ -19,6 +20,8 @@ class PetManagementController(
     private val imageService: ImageService
 ) {
 
+    private val log = LoggerFactory.getLogger(javaClass)
+
     // ==================== Pets ====================
 
     /**
@@ -29,6 +32,7 @@ class PetManagementController(
     fun getPets(
         @RequestParam(required = false, defaultValue = "false") includeDeleted: Boolean
     ): List<PetDto> {
+        log.debug("Fetching pets, includeDeleted={}", includeDeleted)
         return petService.findAllForAdmin(includeDeleted)
     }
 
@@ -41,6 +45,7 @@ class PetManagementController(
     fun createPet(
         @RequestBody @Valid request: CreatePetRequest
     ): PetDto {
+        log.info("Creating pet name={}, speciesId={}", request.name, request.speciesId)
         return petService.create(request)
     }
 
@@ -53,6 +58,7 @@ class PetManagementController(
         @PathVariable id: Long,
         @RequestBody @Valid request: UpdatePetRequest
     ): PetDto {
+        log.info("Updating pet id={}", id)
         return petService.update(id, request)
     }
 
@@ -63,6 +69,7 @@ class PetManagementController(
     @DeleteMapping("/pets/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun deletePet(@PathVariable id: Long) {
+        log.info("Deleting pet id={}", id)
         petService.delete(id)
     }
 
@@ -77,6 +84,7 @@ class PetManagementController(
     fun uploadImage(
         @RequestParam("image") file: MultipartFile
     ): ImageUploadResponse {
+        log.info("Uploading image, filename={}, size={}", file.originalFilename, file.size)
         return imageService.uploadImage(file)
     }
 }

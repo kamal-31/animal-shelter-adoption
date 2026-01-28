@@ -201,14 +201,14 @@ This project uses modern, industry-standard technologies to demonstrate best pra
 
 ### Backend Testing Stack
 
-| Tool | Purpose |
-|------|---------|
-| **JUnit 5** | Test framework |
-| **Mockito + mockito-kotlin** | Mocking dependencies |
-| **Spring Test** | Spring context testing |
-| **Testcontainers** | Integration testing with real PostgreSQL |
-| **JSONAssert** | Flexible JSON comparison |
-| **JaCoCo** | Code coverage reporting |
+| Tool                         | Purpose                                  |
+|------------------------------|------------------------------------------|
+| **JUnit 5**                  | Test framework                           |
+| **Mockito + mockito-kotlin** | Mocking dependencies                     |
+| **Spring Test**              | Spring context testing                   |
+| **Testcontainers**           | Integration testing with real PostgreSQL |
+| **JSONAssert**               | Flexible JSON comparison                 |
+| **JaCoCo**                   | Code coverage reporting                  |
 
 **Why Mockito?**
 
@@ -268,14 +268,14 @@ See [FUTURE_ENHANCEMENTS.md](FUTURE_ENHANCEMENTS.md) for complete list.
 
 ```kotlin
 Kotlin: 2.3.0
-Spring Boot: 4.0.2
-PostgreSQL Driver: (managed by Spring)
+Spring Boot : 4.0.2
+PostgreSQL Driver :(managed by Spring)
 Flyway: (managed by Spring)
 AWS SDK S3: 2.29.0
 
 // Testing
 JUnit 5: (managed by Spring)
-Mockito-Kotlin: 5.4.0
+Mockito - Kotlin: 5.4.0
 JaCoCo: 0.8.12
 ```
 

@@ -6,6 +6,7 @@ import com.animalshelter.model.ApplicationStatus
 import com.animalshelter.service.AdoptionService
 import com.animalshelter.service.ApplicationService
 import jakarta.validation.Valid
+import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -15,6 +16,8 @@ class AdminApplicationController(
     private val applicationService: ApplicationService,
     private val adoptionService: AdoptionService
 ) {
+
+    private val log = LoggerFactory.getLogger(javaClass)
 
     // ==================== Applications ====================
 
@@ -27,6 +30,7 @@ class AdminApplicationController(
         @RequestParam(required = false) status: ApplicationStatus?,
         @RequestParam(required = false) petId: Long?
     ): List<AdminApplicationDto> {
+        log.info("Fetching applications with status={}, petId={}", status, petId)
         return applicationService.findAllForAdmin(status, petId)
     }
 
@@ -39,6 +43,7 @@ class AdminApplicationController(
         @PathVariable id: Long,
         @RequestBody request: ApproveApplicationRequest
     ): ApproveApplicationResponse {
+        log.info("Approving application id={}, reviewedBy={}", id, request.reviewedBy)
         return applicationService.approveApplication(id, request)
     }
 
@@ -51,6 +56,7 @@ class AdminApplicationController(
         @PathVariable id: Long,
         @RequestBody request: RejectApplicationRequest
     ): RejectApplicationResponse {
+        log.info("Rejecting application id={}, reviewedBy={}", id, request.reviewedBy)
         return applicationService.rejectApplication(id, request)
     }
 
@@ -65,6 +71,7 @@ class AdminApplicationController(
         @RequestParam(required = false) status: AdoptionStatus?,
         @RequestParam(required = false) petId: Long?
     ): List<AdminAdoptionDto> {
+        log.debug("Fetching adoptions with status={}, petId={}", status, petId)
         return adoptionService.findAllForAdmin(status, petId)
     }
 
@@ -77,6 +84,7 @@ class AdminApplicationController(
         @PathVariable id: Long,
         @RequestBody request: ConfirmAdoptionRequest
     ): ConfirmAdoptionResponse {
+        log.info("Confirming adoption id={}", id)
         return adoptionService.confirmAdoption(id, request)
     }
 
@@ -89,6 +97,7 @@ class AdminApplicationController(
         @PathVariable id: Long,
         @RequestBody @Valid request: CancelAdoptionRequest
     ): CancelAdoptionResponse {
+        log.info("Cancelling adoption id={}, reason={}", id, request.reason)
         return adoptionService.cancelAdoption(id, request)
     }
 
@@ -101,6 +110,7 @@ class AdminApplicationController(
         @PathVariable id: Long,
         @RequestBody @Valid request: ReturnPetRequest
     ): ReturnPetResponse {
+        log.info("Returning pet for adoption id={}, reason={}", id, request.returnReason)
         return adoptionService.returnPet(id, request)
     }
 }

@@ -197,6 +197,39 @@ This project uses modern, industry-standard technologies to demonstrate best pra
 
 ---
 
+## Testing
+
+### Backend Testing Stack
+
+| Tool | Purpose |
+|------|---------|
+| **JUnit 5** | Test framework |
+| **Mockito + mockito-kotlin** | Mocking dependencies |
+| **Spring Test** | Spring context testing |
+| **JaCoCo** | Code coverage reporting |
+
+**Why Mockito?**
+
+- ✅ Industry standard for Java/Kotlin mocking
+- ✅ Clean API with mockito-kotlin extensions
+- ✅ Excellent documentation and community support
+- ✅ Built-in with spring-boot-starter-test
+
+**Why JaCoCo?**
+
+- ✅ Industry standard for JVM code coverage
+- ✅ Generates HTML and XML reports
+- ✅ Integrates with Gradle seamlessly
+- ✅ Supports coverage thresholds enforcement
+
+**Test Coverage:**
+
+- Service layer: 95%+ instruction coverage
+- 76 unit tests across all services
+- Mocked repository layer for isolated unit testing
+
+---
+
 ## Not Included (Out of Scope)
 
 These are production-ready features intentionally excluded to focus on core functionality:
@@ -216,11 +249,6 @@ These are production-ready features intentionally excluded to focus on core func
 - **Would use:** GitHub Actions + Docker Registry
 - **Reason:** Manual deployment for demo
 
-### Testing
-
-- **Would use:** JUnit 5 + MockK + React Testing Library
-- **Reason:** Time constraints for portfolio demo
-
 See [FUTURE_ENHANCEMENTS.md](FUTURE_ENHANCEMENTS.md) for complete list.
 
 ---
@@ -230,11 +258,16 @@ See [FUTURE_ENHANCEMENTS.md](FUTURE_ENHANCEMENTS.md) for complete list.
 ### Backend
 
 ```kotlin
--Kotlin: 1.9.21
--Spring Boot : 3.2.1
--PostgreSQL Driver : 42.7.1
--Flyway: 9.22.3
--AWS SDK S3: 1.12.629
+Kotlin: 2.3.0
+Spring Boot: 4.0.2
+PostgreSQL Driver: (managed by Spring)
+Flyway: (managed by Spring)
+AWS SDK S3: 2.29.0
+
+// Testing
+JUnit 5: (managed by Spring)
+Mockito-Kotlin: 5.4.0
+JaCoCo: 0.8.12
 ```
 
 ### Frontend

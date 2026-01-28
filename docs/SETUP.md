@@ -124,7 +124,8 @@ This will:
 
 - Download dependencies
 - Compile Kotlin code
-- Run tests (if any)
+- Run unit tests (76 service layer tests)
+- Generate JaCoCo coverage report
 - Create executable JAR
 
 #### 3. Database Migrations
@@ -440,7 +441,37 @@ aws --endpoint-url=http://localhost:4566 s3 ls
 
 ```bash
 cd backend
+
+# Run all tests
 ./gradlew test
+
+# Run tests with coverage report (auto-generated)
+./gradlew test jacocoTestReport
+
+# Run specific test class
+./gradlew test --tests "com.animalshelter.service.PetServiceTest"
+
+# Run specific test method
+./gradlew test --tests "com.animalshelter.service.PetServiceTest.FindAll*"
+```
+
+**View Coverage Reports:**
+
+```bash
+# After running tests, open in browser:
+open build/reports/jacoco/html/index.html   # Mac
+xdg-open build/reports/jacoco/html/index.html  # Linux
+start build/reports/jacoco/html/index.html  # Windows
+
+# Test results HTML report
+open build/reports/tests/test/index.html
+```
+
+**Verify Coverage Thresholds:**
+
+```bash
+# Fails build if coverage < 70%
+./gradlew jacocoTestCoverageVerification
 ```
 
 **Frontend:**

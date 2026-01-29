@@ -451,7 +451,7 @@ This project is created for educational and portfolio purposes.
 
 ## 👤 Author
 
-**Kamal Gamdhi**
+**Kamal Gandhi**
 
 ---
 
@@ -467,7 +467,7 @@ This project is created for educational and portfolio purposes.
 
 For questions about this project, please reach out via:
 
-- 📧 Email: kamalgamdhi20@example.com
+- 📧 Email: kamalgandhi20@gmail.com
 
 ---
 
